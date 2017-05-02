@@ -29,6 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,3 +52,4 @@ set softtabstop=2
 set relativenumber
 set number
 syntax enable
+let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimwiki/export/html/'}]
