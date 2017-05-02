@@ -26,6 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+"
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'jiangmiao/auto-pairs'
@@ -53,3 +55,6 @@ set relativenumber
 set number
 syntax enable
 let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimwiki/export/html/'}]
+
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 0
