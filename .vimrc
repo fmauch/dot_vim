@@ -49,9 +49,9 @@ Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-"filetype plugin indent on    " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -96,11 +96,12 @@ nmap <Leader>C :ClangFormat<CR>
 map <C-d> :call NERDComment(0,"toggle")<CR>
 
 " CTRLP
-let g:ctrlp_root_markers = ['source_local.sh']
+let g:ctrlp_root_markers = ['source_local.sh', '.ctrlp.stop']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
+  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git|checkout)',
   \ 'file': '\v\.(exe|so|dll)$|.pyc$',
   \ }
+let g:ctrlp_show_hidden = 1
 map <C-n> :CtrlPBufTag<CR>
 
 " Tabbar
