@@ -40,11 +40,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
-"Plugin 'tpope/vim-fugitive' " come back to this later
+Plugin 'tpope/vim-fugitive' " come back to this later
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
