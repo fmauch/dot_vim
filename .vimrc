@@ -28,16 +28,29 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vimwiki/vimwiki'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+"Plugin 'tpope/vim-fugitive' " come back to this later
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -53,8 +66,47 @@ set shiftwidth=2
 set softtabstop=2
 set relativenumber
 set number
+set hlsearch " highlight all matches
+set incsearch " search on each character
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+set ignorecase    " with combination of smartcase!
+set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo 
+
+
 syntax enable
 let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimwiki/export/html/'}]
 
+
+" YouCompleteMe config
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 0
+let g:ycm_autoclose_preview_window_after_completion=0
+" Goto definition with F3
+map <F3> :YcmCompleter GoTo<CR>
+
+
+
+let g:clang_format#command = 'clang-format-3.8'
+let g:clang_format#detect_style_file = 1
+nmap <Leader>C :ClangFormat<CR>
+
+" NERDCommenter
+map <C-d> :call NERDComment(0,"toggle")<CR>
+
+" CTRLP
+let g:ctrlp_root_markers = ['source_local.sh']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
+  \ 'file': '\v\.(exe|so|dll)$|.pyc$',
+  \ }
+map <C-n> :CtrlPBufTag<CR>
+
+" Tabbar
+nmap <C-t> :TagbarToggle<CR>
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
