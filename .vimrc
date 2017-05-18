@@ -160,8 +160,8 @@ inoremap <buffer> <silent> <End>  <C-o>g<End>
 
 set runtimepath+=~/dotfiles/vim_snippets
 autocmd BufNewFile, BufRead *.launch setfiletype xml
-
-
+set wildmode=longest,list,full
+set wildmenu
 
 
 nmap <F5> :CopyDefinition<CR>
