@@ -27,25 +27,29 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'suan/vim-instant-markdown'
+"Plugin 'Valloric/YouCompleteMe' " I use a fork currently
+Plugin 'SirVer/ultisnips'
+Plugin 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'vimwiki/vimwiki'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'majutsushi/tagbar'
+Plugin 'oblitum/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'taketwo/vim-ros'
+Plugin 'tpope/vim-fugitive' " come back to this later
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vimwiki/vimwiki'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-fugitive' " come back to this later
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,10 +86,22 @@ let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimw
 " YouCompleteMe config
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 0
-let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_echo_current_diagnostic = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
+map <Leader>gt :YcmCompleter GetType<CR>
 
+
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures_delay = 0
 
 
 let g:clang_format#command = 'clang-format-3.8'
@@ -98,13 +114,13 @@ map <C-d> :call NERDComment(0,"toggle")<CR>
 " CTRLP
 let g:ctrlp_root_markers = ['source_local.sh', '.ctrlp.stop']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git|checkout)',
+  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
   \ 'file': '\v\.(exe|so|dll)$|.pyc$',
   \ }
 let g:ctrlp_show_hidden = 1
 map <C-n> :CtrlPBufTag<CR>
 
-" Tabbar
+" Tagbar
 nmap <C-t> :TagbarToggle<CR>
 
 " UltiSnips
@@ -112,6 +128,16 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" access global clipboard through ctrl-shift-c/v
+imap <C-S-v> <Esc>"+p
+vmap <C-S-c> "+y
+
+" NERDTree
+nmap <Leader>t :NERDTreeToggle<CR>
+
+"vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
 
 
 " Misc editing options
@@ -120,3 +146,65 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 :match ExtraWhitespace /\s\+$/
 " Switch on spelling
 setlocal spell spelllang=en_us
+:hi SpellBad ctermfg=red ctermbg=gray cterm=underline
+" Move display lines in wrapped text
+set virtualedit=
+noremap  <buffer> <silent> <Up>   gk
+noremap  <buffer> <silent> <Down> gj
+noremap  <buffer> <silent> <Home> g<Home>
+noremap  <buffer> <silent> <End>  g<End>
+inoremap <buffer> <silent> <Up>   <C-o>gk
+inoremap <buffer> <silent> <Down> <C-o>gj
+inoremap <buffer> <silent> <Home> <C-o>g<Home>
+inoremap <buffer> <silent> <End>  <C-o>g<End>
+
+set runtimepath+=~/dotfiles/vim_snippets
+autocmd BufNewFile, BufRead *.launch setfiletype xml
+
+
+
+
+nmap <F5> :CopyDefinition<CR>
+nmap <F6> :ImplementDefinition<CR>
+command! CopyDefinition :call s:GetDefinitionInfo()
+command! ImplementDefinition :call s:ImplementDefinition()
+function! s:GetDefinitionInfo()
+  exe 'normal ma'
+  " Get class
+  call search('^\s*\<class\>', 'b')
+  exe 'normal ^w"ayw'
+  let s:class = @a
+  let l:ns = search('^\s*\<namespace\>', 'b')
+  " Get namespace
+  if l:ns != 0
+    exe 'normal ^w"ayw'
+    let s:namespace = @a
+  else
+    let s:namespace = ''
+  endif
+  " Go back to definition
+  exe 'normal `a'
+  exe 'normal "aY'
+  let s:defline = substitute(@a, ';\n', '', '')
+endfunction
+ 
+function! s:ImplementDefinition()
+  call append('.', s:defline)
+  exe 'normal j'
+  " Remove keywords
+  s/\<virtual\>\s*//e
+  s/\<static\>\s*//e
+  if s:namespace == ''
+    let l:classString = s:class . "::"
+  else
+    let l:classString = s:namespace . "::" . s:class . "::"
+  endif
+  " Remove default parameters
+  s/\s\{-}=\s\{-}[^,)]\{1,}//e
+  " Add class qualifier
+  exe 'normal ^f(bi' . l:classString
+  " Add brackets
+  exe "normal $o{\<CR>\<TAB>\<CR>}\<CR>\<ESC>kkkk"
+  " Fix indentation
+  exe 'normal =4j^'
+endfunction
