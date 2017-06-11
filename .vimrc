@@ -214,3 +214,9 @@ function! s:ImplementDefinition()
   " Fix indentation
   exe 'normal =4j^'
 endfunction
+
+" Disable arrow keys
+noremap <up> <C-w><up>
+noremap <down> <C-w><down>
+noremap <left> <C-w><left>
+noremap <right> <C-w><right>
