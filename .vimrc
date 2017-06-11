@@ -86,7 +86,7 @@ let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimw
 
 " YouCompleteMe config
 let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 0
+let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_echo_current_diagnostic = 1
 let g:ycm_seed_identifiers_with_syntax = 1
