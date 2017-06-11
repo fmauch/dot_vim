@@ -50,6 +50,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -139,6 +140,11 @@ nmap <Leader>t :NERDTreeToggle<CR>
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 
+
+" vim-flake8
+let g:flake8_show_in_gutter=1
+let g:flake8_show_in_file=1
+autocmd BufWritePost *.py call Flake8()
 
 " Misc editing options
 " Highlight trailing spaces
