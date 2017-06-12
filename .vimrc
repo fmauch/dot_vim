@@ -46,6 +46,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'taketwo/vim-ros'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-fugitive' " come back to this later
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vimwiki/vimwiki'
@@ -225,3 +226,7 @@ noremap <right> <C-w><right>
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+
+" autopep8
+let g:autopep8_max_line_length=100
