@@ -1,3 +1,5 @@
+source ~/.vim/plugin/plugins.vim
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -25,70 +27,18 @@ set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hE
 
 
 syntax enable
-let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimwiki/export/html/'}]
 
 
-" YouCompleteMe config
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_echo_current_diagnostic = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-" Goto definition with F3
-map <F3> :YcmCompleter GoTo<CR>
-map <Leader>gt :YcmCompleter GetType<CR>
 
 
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-let g:jedi#show_call_signatures_delay = 0
 
 
-let g:clang_format#command = 'clang-format-3.8'
-let g:clang_format#detect_style_file = 1
-nmap <Leader>C :ClangFormat<CR>
 
-" NERDCommenter
-map <C-d> :call NERDComment(0,"toggle")<CR>
-
-" CTRLP
-let g:ctrlp_root_markers = ['source_local.sh', '.ctrlp.stop']
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
-  \ 'file': '\v\.(exe|so|dll)$|.pyc$',
-  \ }
-let g:ctrlp_show_hidden = 1
-map <C-n> :CtrlPBufTag<CR>
-
-" Tagbar
-nmap <C-t> :TagbarToggle<CR>
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " access global clipboard through ctrl-shift-c/v
 imap <C-S-v> <Esc>"+p
 vmap <C-S-c> "+y
 
-" NERDTree
-nmap <Leader>t :NERDTreeToggle<CR>
-
-"vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-
-
-" vim-flake8
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1
-autocmd BufWritePost *.py call Flake8()
 
 " Misc editing options
 " Highlight trailing spaces
@@ -165,9 +115,6 @@ noremap <down> <C-w><down>
 noremap <left> <C-w><left>
 noremap <right> <C-w><right>
 
-call yankstack#setup()
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 
 " autopep8
