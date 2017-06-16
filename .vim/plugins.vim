@@ -18,7 +18,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'nvie/vim-flake8'
-Plug 'oblitum/YouCompleteMe'
+Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rdnetto/YCM-Generator'
 Plug 'rhysd/vim-clang-format'
