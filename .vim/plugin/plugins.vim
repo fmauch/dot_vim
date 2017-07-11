@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 Plug 'SirVer/ultisnips'
-Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
+"Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
