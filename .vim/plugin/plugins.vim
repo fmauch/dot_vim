@@ -93,8 +93,8 @@ let g:cpp_member_variable_highlight = 1
 
 " vim-flake8
 let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1
-autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_in_file=0
+"autocmd BufWritePost *.py call Flake8()
 
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
