@@ -1,4 +1,3 @@
-source ~/.vim/plugin/plugins.vim
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -119,3 +118,5 @@ noremap <right> <C-w><right>
 
 " autopep8
 let g:autopep8_max_line_length=100
+
+source ~/.vim/plugin/plugins.vim
