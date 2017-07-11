@@ -20,7 +20,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'nvie/vim-flake8'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'rdnetto/YCM-Generator'
+Plug 'fmauch/YCM-Generator'
 Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
