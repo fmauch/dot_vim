@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
+Plug 'tpope/vim-surround'
 Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-fugitive' " come back to this later
 Plug 'vim-airline/vim-airline'
