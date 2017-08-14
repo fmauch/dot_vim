@@ -12,7 +12,6 @@ Plug 'SirVer/ultisnips'
 "Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
@@ -52,7 +51,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 map <F3> :YcmCompleter GoTo<CR>
 map <Leader>gt :YcmCompleter GetType<CR>
 let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
