@@ -17,6 +17,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}

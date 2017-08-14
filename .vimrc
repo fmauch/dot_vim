@@ -40,9 +40,6 @@ vmap <C-S-c> "+y
 
 
 " Misc editing options
-" Highlight trailing spaces
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
 " Switch on spelling
 setlocal spell spelllang=en_us
 :hi SpellBad ctermfg=red ctermbg=gray cterm=underline
