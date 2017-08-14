@@ -105,3 +105,16 @@ let g:autopep8_aggressive=2
 let g:autopep8_indent_size=2
 autocmd FileType python set equalprg=autopep8\ -
 
+
+" DoxygenToolkit
+let g:DoxygenToolkit_briefTag_pre="\\brief "
+let g:DoxygenToolkit_paramTag_pre="\\param "
+let g:DoxygenToolkit_returnTag="\\returns "
+let g:DoxygenToolkit_fileTag="\\file "
+let g:DoxygenToolkit_authorTag="\\author "
+let g:DoxygenToolkit_dateTag="\\date "
+let g:DoxygenToolkit_versionTag="\\version "
+let g:DoxygenToolkit_classTag="\\class "
+let g:DoxygenToolkit_blockTag="\\name "
+let g:DoxygenToolkit_startCommentTag="/*! "
+let g:DoxygenToolkit_startCommentBlock="/* "
