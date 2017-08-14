@@ -77,6 +77,7 @@ map <C-n> :CtrlPBufTag<CR>
 
 " Tagbar
 nmap <C-t> :TagbarToggle<CR>
+let g:tagbar_autoclose = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-k>"
