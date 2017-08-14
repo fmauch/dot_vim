@@ -66,9 +66,6 @@ let g:clang_format#command = 'clang-format-3.8'
 let g:clang_format#detect_style_file = 1
 nmap <Leader>C :ClangFormat<CR>
 
-" NERDCommenter
-map <C-d> :call NERDComment(0,"toggle")<CR>
-
 " CTRLP
 let g:ctrlp_root_markers = ['source_local.sh', '.ctrlp.stop']
 let g:ctrlp_custom_ignore = {
