@@ -12,6 +12,7 @@ Plug 'SirVer/ultisnips'
 "Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
