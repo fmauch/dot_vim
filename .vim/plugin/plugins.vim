@@ -17,7 +17,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'nvie/vim-flake8'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
@@ -31,6 +30,7 @@ Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-fugitive' " come back to this later
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
@@ -101,3 +101,7 @@ let g:flake8_show_in_file=0
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" Syntastic
+map <F7> :SyntasticCheck<CR>
+
