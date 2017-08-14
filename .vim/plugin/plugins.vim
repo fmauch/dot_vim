@@ -93,16 +93,16 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 
 " Yankstack
-
-" vim-flake8
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=0
-"autocmd BufWritePost *.py call Flake8()
-
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Syntastic
 map <F7> :SyntasticCheck<CR>
+
+" Autopep8
+let g:autopep8_max_line_length=99
+let g:autopep8_aggressive=2
+let g:autopep8_indent_size=2
+autocmd FileType python set equalprg=autopep8\ -
 

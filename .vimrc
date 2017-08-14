@@ -116,7 +116,4 @@ noremap <right> <C-w><right>
 
 
 
-" autopep8
-let g:autopep8_max_line_length=100
-
 source ~/.vim/plugin/plugins.vim
