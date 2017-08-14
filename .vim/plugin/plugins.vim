@@ -1,3 +1,4 @@
+" Automatically install vim-plug if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -91,6 +92,7 @@ nmap <Leader>t :NERDTreeToggle<CR>
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 
+" Yankstack
 
 " vim-flake8
 let g:flake8_show_in_gutter=1

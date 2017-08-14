@@ -57,6 +57,7 @@ inoremap <buffer> <silent> <Down> <C-o>gj
 inoremap <buffer> <silent> <Home> <C-o>g<Home>
 inoremap <buffer> <silent> <End>  <C-o>g<End>
 
+" Add snippets
 set runtimepath+=~/dotfiles/vim_snippets
 set runtimepath+=~/dotfiles/vim_snippets_ros
 set runtimepath+=~/dotfiles/vim_snippets_fzi
@@ -64,7 +65,7 @@ autocmd BufNewFile, BufRead *.launch setfiletype xml
 set wildmode=longest,list,full
 set wildmenu
 
-
+" Copy definition of a function in C++
 nmap <F5> :CopyDefinition<CR>
 nmap <F6> :ImplementDefinition<CR>
 command! CopyDefinition :call s:GetDefinitionInfo()
