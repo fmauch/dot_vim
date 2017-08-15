@@ -123,3 +123,5 @@ set background=dark
 
 "  settings
 set guioptions-=m  "remove menu bar
+
+let g:load_doxygen_syntax=1
