@@ -86,7 +86,14 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " NERDTree
-nmap <Leader>t :NERDTreeToggle<CR>
+function! ToggleNERDTreeFind()
+    if g:NERDTree.IsOpen()
+        execute ':NERDTreeClose'
+    else
+        execute ':NERDTreeFind'
+    endif
+endfunction
+nmap <Leader>t :call ToggleNERDTreeFind()<CR>
 
 "vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
