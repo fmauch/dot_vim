@@ -103,7 +103,7 @@ map <F7> :SyntasticCheck<CR>
 " Autopep8
 let g:autopep8_max_line_length=99
 let g:autopep8_aggressive=2
-let g:autopep8_indent_size=2
+let g:autopep8_indent_size=4
 autocmd FileType python set equalprg=autopep8\ -
 
 
