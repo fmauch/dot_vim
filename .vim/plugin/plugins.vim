@@ -36,6 +36,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
 call plug#end()
 
