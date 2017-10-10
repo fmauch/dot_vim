@@ -43,6 +43,12 @@ vmap <C-S-c> "+y
 " Switch on spelling
 setlocal spell spelllang=en_us
 :hi SpellBad ctermfg=red ctermbg=gray cterm=underline
+
+" Limit line width
+set tw=100
+set fo+=t
+set colorcolumn=100
+
 " Move display lines in wrapped text
 set virtualedit=
 noremap  <buffer> <silent> <Up>   gk
