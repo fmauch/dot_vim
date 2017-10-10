@@ -22,12 +22,10 @@ set incsearch " search on each character
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set ignorecase    " with combination of smartcase!
-set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo 
+set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo
 
 
 syntax enable
-
-
 
 
 
@@ -92,7 +90,7 @@ function! s:GetDefinitionInfo()
   exe 'normal "aY'
   let s:defline = substitute(@a, ';\n', '', '')
 endfunction
- 
+
 function! s:ImplementDefinition()
   call append('.', s:defline)
   exe 'normal j'
