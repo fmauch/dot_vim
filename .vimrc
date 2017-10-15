@@ -59,8 +59,6 @@ inoremap <buffer> <silent> <Home> <C-o>g<Home>
 inoremap <buffer> <silent> <End>  <C-o>g<End>
 
 " Add snippets
-set runtimepath+=~/dotfiles/vim_snippets
-set runtimepath+=~/dotfiles/vim_snippets_ros
 set runtimepath+=~/dotfiles/vim_snippets_fzi
 autocmd BufNewFile, BufRead *.launch setfiletype xml
 set wildmode=longest,list,full
