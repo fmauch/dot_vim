@@ -1,0 +1,6 @@
+[submodule ".vim/snippet_repos/vim_snippets_ros"]
+	path = .vim/snippet_repos/vim_snippets_ros
+	url = https://github.com/fmauch/vim_snippets_ros.git
+[submodule ".vim/snippet_repos/vim_snippets"]
+	path = .vim/snippet_repos/vim_snippets
+	url = https://github.com/fmauch/vim_snippets.git
