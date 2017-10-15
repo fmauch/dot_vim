@@ -84,8 +84,10 @@ let g:tagbar_autoclose = 1
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetsDir="~/.vim/snippet_repos/vim_snippets"
-let g:UltiSnipsSnippetDirectories="[~/.vim/snippet_repos/vim_snippets_ros/UltiSnips]"
+set runtimepath+=~/.vim/snippet_repos/vim_snippets
+set runtimepath+=~/.vim/snippet_repos/vim_snippets_ros
+"let g:UltiSnipsSnippetsDir="~/.vim/snippet_repos/vim_snippets"
+"let g:UltiSnipsSnippetDirectories="[~/.vim/snippet_repos/vim_snippets_ros]"
 
 " NERDTree
 function! ToggleNERDTreeFind()
