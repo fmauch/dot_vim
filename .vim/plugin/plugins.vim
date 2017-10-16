@@ -29,12 +29,11 @@ Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-surround'
 Plug 'tell-k/vim-autopep8'
-Plug 'tpope/vim-fugitive' " come back to this later
+"Plug 'tpope/vim-fugitive' " come back to this later
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
-Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 
