@@ -129,3 +129,6 @@ let g:DoxygenToolkit_classTag="\\class "
 let g:DoxygenToolkit_blockTag="\\name "
 let g:DoxygenToolkit_startCommentTag="/*! "
 let g:DoxygenToolkit_startCommentBlock="/* "
+
+" Notes directory
+:let g:notes_directories = ['~/Documents/Notes']
