@@ -36,6 +36,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -49,6 +50,10 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_echo_current_diagnostic = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
 map <Leader>gt :YcmCompleter GetType<CR>
