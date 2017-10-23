@@ -41,7 +41,11 @@ Plug 'tell-k/vim-autopep8'
 "Plug 'tpope/vim-fugitive' " come back to this later
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'vim-syntastic/syntastic'
+if has('nvim') || (v:version > 800)
+  Plug 'neomake/neomake'
+else
+  Plug 'vim-syntastic/syntastic'
+endif
 Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
@@ -146,3 +150,7 @@ let g:DoxygenToolkit_startCommentBlock="/* "
 
 " Notes directory
 :let g:notes_directories = ['~/Documents/Notes']
+
+if has('nvim')
+  call neomake#configure#automake('w')
+endif
