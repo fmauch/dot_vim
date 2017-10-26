@@ -153,5 +153,12 @@ let g:DoxygenToolkit_startCommentBlock="/* "
 :let g:notes_directories = ['~/Documents/Notes']
 
 if has('nvim')
-  call neomake#configure#automake('w')
+  call neomake#configure#automake('rw', 500)
+  let g:neomake_python_enabled_makers = ['pylint']
+  augroup my_neomake_signs
+      au!
+      autocmd ColorScheme *
+          \ hi NeomakeErrorSign ctermfg = red |
+          \ hi NeomakeWarningSign ctermfg = yellow
+  augroup END
 endif
