@@ -55,7 +55,7 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 
-let g:vimwiki_list = [{'path':'~/owncloud/vimwiki', 'path_html':'~/owncloud/vimwiki/export/html/'}]
+let g:vimwiki_list = [{'path':'~/Nextcloud/vimwiki', 'path_html':'~/Nextcloud/vimwiki/export/html/'}]
 
 
 " YouCompleteMe config
