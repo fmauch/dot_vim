@@ -150,7 +150,7 @@ let g:DoxygenToolkit_startCommentTag="/*! "
 let g:DoxygenToolkit_startCommentBlock="/* "
 
 " Notes directory
-:let g:notes_directories = ['~/Documents/Notes']
+:let g:notes_directories = ['~/Documents/vaults/vim-notes']
 
 if has('nvim')
   call neomake#configure#automake('rw', 500)
