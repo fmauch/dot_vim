@@ -51,6 +51,13 @@ Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'lervag/vimtex'
+Plug 'KabbAmine/zeavim.vim', {'on': [
+			\	'Zeavim', 'Docset',
+			\	'<Plug>Zeavim',
+			\	'<Plug>ZVVisSelection',
+			\	'<Plug>ZVKeyDocset',
+			\	'<Plug>ZVMotion'
+			\ ]}
 
 call plug#end()
 
