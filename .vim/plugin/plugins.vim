@@ -32,6 +32,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
+Plug 'richq/vim-cmake-completion'
 Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
