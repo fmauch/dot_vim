@@ -28,6 +28,9 @@ set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hE
 syntax enable
 
 
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
 
 
 
@@ -120,6 +123,7 @@ noremap <right> <C-w><right>
 
 source ~/.vim/plugin/plugins.vim
 
+let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
