@@ -124,8 +124,8 @@ noremap <right> <C-w><right>
 source ~/.vim/plugin/plugins.vim
 
 let g:solarized_termcolors=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
 
 "  settings
 set guioptions-=m  "remove menu bar
