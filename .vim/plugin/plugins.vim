@@ -94,7 +94,7 @@ let g:clang_format#detect_style_file = 1
 nmap <Leader>C :ClangFormat<CR>
 
 " CTRLP
-let g:ctrlp_root_markers = ['source_local.sh', '.ctrlp.stop']
+let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
   \ 'file': '\v\.(exe|so|dll)$|.pyc$',
