@@ -19,10 +19,12 @@ set relativenumber
 set number
 set hlsearch " highlight all matches
 set incsearch " search on each character
-" Press Space to turn off highlighting and clear any message already displayed.
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Press \ to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
 set ignorecase    " with combination of smartcase!
 set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo
+
+:let mapleader = " "
 
 
 syntax enable
