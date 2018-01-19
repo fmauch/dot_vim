@@ -170,3 +170,6 @@ if has('nvim')
           \ hi NeomakeWarningSign ctermfg = yellow
   augroup END
 endif
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
