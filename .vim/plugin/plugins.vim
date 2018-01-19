@@ -172,4 +172,14 @@ if has('nvim')
 endif
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <C-w>1 <Plug>AirlineSelectTab1
+nmap <C-w>2 <Plug>AirlineSelectTab2
+nmap <C-w>3 <Plug>AirlineSelectTab3
+nmap <C-w>4 <Plug>AirlineSelectTab4
+nmap <C-w>5 <Plug>AirlineSelectTab5
+nmap <C-w>6 <Plug>AirlineSelectTab6
+nmap <C-w>7 <Plug>AirlineSelectTab7
+nmap <C-w>8 <Plug>AirlineSelectTab8
+nmap <C-w>9 <Plug>AirlineSelectTab9
+
