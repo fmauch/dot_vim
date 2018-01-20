@@ -92,6 +92,7 @@ let g:jedi#show_call_signatures_delay = 0
 let g:clang_format#command = 'clang-format-3.8'
 let g:clang_format#detect_style_file = 1
 nmap <Leader>C :ClangFormat<CR>
+vmap <Leader>C :ClangFormat<CR>
 
 " CTRLP
 let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop']
