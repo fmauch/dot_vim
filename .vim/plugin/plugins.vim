@@ -89,7 +89,6 @@ let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_delay = 0
 
 " Clang-format
-let g:clang_format#command = 'clang-format-3.8'
 let g:clang_format#detect_style_file = 1
 nmap <Leader>C :ClangFormat<CR>
 vmap <Leader>C :ClangFormat<CR>
