@@ -63,6 +63,10 @@ inoremap <buffer> <silent> <Down> <C-o>gj
 inoremap <buffer> <silent> <Home> <C-o>g<Home>
 inoremap <buffer> <silent> <End>  <C-o>g<End>
 
+"Emacs like bindings fro home and end
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+
 " Add snippets
 set runtimepath+=~/dotfiles/vim_snippets
 set runtimepath+=~/dotfiles/vim_snippets_fzi
