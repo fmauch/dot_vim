@@ -173,6 +173,7 @@ endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 nmap <C-w>1 <Plug>AirlineSelectTab1
 nmap <C-w>2 <Plug>AirlineSelectTab2
 nmap <C-w>3 <Plug>AirlineSelectTab3
