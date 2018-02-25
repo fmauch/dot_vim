@@ -80,6 +80,7 @@ nmap <F5> :CopyDefinition<CR>
 nmap <F6> :ImplementDefinition<CR>
 command! CopyDefinition :call s:GetDefinitionInfo()
 command! ImplementDefinition :call s:ImplementDefinition()
+
 function! s:GetDefinitionInfo()
   exe 'normal ma'
   " Get class
@@ -96,11 +97,21 @@ function! s:GetDefinitionInfo()
   endif
   " Go back to definition
   exe 'normal `a'
-  exe 'normal "aY'
-  let s:defline = substitute(@a, ';\n', '', '')
+  " Find end of function declaration
+  call search(';$')
+  exe 'normal mb'
+  " Find beginning of function TODO: This may lead to errors?
+  call search('(', 'b')
+  call search('template', 'b', line('.') - 1)
+  " Copy function definition
+  exe 'normal ^ma'
+  exe 'normal `a'
+  exe 'normal "ay`b`'
+  let s:defline = substitute(@a, '\n', '', '')
 endfunction
 
 function! s:ImplementDefinition()
+  exe 'normal o'
   call append('.', s:defline)
   exe 'normal j'
   " Remove keywords
@@ -116,9 +127,10 @@ function! s:ImplementDefinition()
   " Add class qualifier
   exe 'normal ^f(bi' . l:classString
   " Add brackets
-  exe "normal $o{\<CR>\<TAB>\<CR>}\<CR>\<ESC>kkkk"
-  " Fix indentation
-  exe 'normal =4j^'
+  exe "normal o{\<CR>}\<ESC>kk"
+  " Format it
+  call clang_format#replace(line('.') - 2,line('.'))
+  call search('{')
 endfunction
 
 " Disable arrow keys
