@@ -2,21 +2,17 @@
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
+" Tabs and soaces. No tabs!
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" line numbers
 set relativenumber
 set number
+
+" Searching related stuff
 set hlsearch " highlight all matches
 set incsearch " search on each character
 " Press \ to turn off highlighting and clear any message already displayed.
@@ -71,6 +67,8 @@ inoremap <C-e> <C-o>$
 set runtimepath+=~/dotfiles/vim_snippets
 set runtimepath+=~/dotfiles/vim_snippets_fzi
 set runtimepath+=~/dotfiles/vim_snippets_ros
+
+
 autocmd BufNewFile, BufRead *.launch setfiletype xml
 set wildmode=longest,list,full
 set wildmenu
