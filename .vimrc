@@ -3,7 +3,7 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 
-" Tabs and soaces. No tabs!
+" Tabs and spaces. No tabs!
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -20,6 +20,7 @@ set incsearch " search on each character
 set ignorecase    " with combination of smartcase!
 set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo
 
+" Set leader key to space
 :let mapleader = " "
 
 
@@ -40,7 +41,7 @@ vmap <C-S-c> "+y
 
 " Misc editing options
 " Switch on spelling
-setlocal spell spelllang=en_us
+set spell spelllang=en_us
 :hi SpellBad ctermfg=red ctermbg=gray cterm=underline
 
 " Limit line width
@@ -59,17 +60,15 @@ inoremap <buffer> <silent> <Down> <C-o>gj
 inoremap <buffer> <silent> <Home> <C-o>g<Home>
 inoremap <buffer> <silent> <End>  <C-o>g<End>
 
-"Emacs like bindings fro home and end
+"Emacs like bindings for home and end
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
-" Add snippets
-set runtimepath+=~/dotfiles/vim_snippets
-set runtimepath+=~/dotfiles/vim_snippets_fzi
-set runtimepath+=~/dotfiles/vim_snippets_ros
 
-
+" Read .launch files as xml files
 autocmd BufNewFile, BufRead *.launch setfiletype xml
+
+" Get fancyer completion list for the command window
 set wildmode=longest,list,full
 set wildmenu
 
@@ -81,7 +80,12 @@ noremap <left> <C-w><left>
 noremap <right> <C-w><right>
 
 
+" Add snippets
+set runtimepath+=~/dotfiles/vim_snippets
+set runtimepath+=~/dotfiles/vim_snippets_fzi
+set runtimepath+=~/dotfiles/vim_snippets_ros
 
+" Source my plugins
 source ~/.vim/plugin/plugins.vim
 
 let g:solarized_termcolors=256
@@ -91,4 +95,5 @@ colorscheme solarized
 "  settings
 set guioptions-=m  "remove menu bar
 
+" Activate doxygen highlighting
 let g:load_doxygen_syntax=1
