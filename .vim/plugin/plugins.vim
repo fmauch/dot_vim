@@ -193,3 +193,12 @@ endif
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+
+function! s:colorscheme_customize() abort
+  :hi SpellBad ctermfg=NONE ctermbg=NONE cterm=underline
+endfunction
+
+augroup on_change_colorschema
+  autocmd!
+  autocmd ColorScheme * call s:colorscheme_customize()
+augroup END

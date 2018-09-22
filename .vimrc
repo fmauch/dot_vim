@@ -42,7 +42,6 @@ vmap <C-S-c> "+y
 " Misc editing options
 " Switch on spelling
 set spell spelllang=en_us
-:hi SpellBad ctermfg=red ctermbg=gray cterm=underline
 
 " Limit line width
 set tw=100
@@ -97,3 +96,4 @@ set guioptions-=m  "remove menu bar
 
 " Activate doxygen highlighting
 let g:load_doxygen_syntax=1
+set guicursor=
