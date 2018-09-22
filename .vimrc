@@ -97,3 +97,5 @@ set guioptions-=m  "remove menu bar
 " Activate doxygen highlighting
 let g:load_doxygen_syntax=1
 set guicursor=
+
+:command RemoveTrailingWS %s/\s\+$//e
