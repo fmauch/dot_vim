@@ -41,7 +41,7 @@ Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-surround'
 Plug 'tell-k/vim-autopep8'
-Plug 'tpope/vim-fugitive' " come back to this later
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 if has('nvim') || (v:version > 800)
@@ -50,7 +50,7 @@ else
   Plug 'vim-syntastic/syntastic'
 endif
 Plug 'vimwiki/vimwiki'
-Plug 'xolox/vim-misc'
+Plug 'xolox/vim-misc' " needed for vim-notes
 Plug 'xolox/vim-notes'
 Plug 'lervag/vimtex'
 Plug 'KabbAmine/zeavim.vim', {'on': [
