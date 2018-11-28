@@ -65,8 +65,14 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
 
 call plug#end()
 
-
-let g:vimwiki_list = [{'path':'~/Documents/vaults/vimwiki', 'path_html':'~/Documents/vaults/vimwiki/export/html/'}]
+" vimwiki
+let private_wiki = {}
+let private_wiki.path = '~/.vimwiki_private/'
+let private_wiki.path_html = '~/.vimwiki_private/export/html/'
+let work_wiki = {}
+let work_wiki.path = '~/.vimwiki_work/'
+let work_wiki.path_html = '~/.vimwiki_work/export/html/'
+let g:vimwiki_list = [work_wiki, private_wiki]
 
 
 " YouCompleteMe config
@@ -161,7 +167,7 @@ let g:DoxygenToolkit_startCommentTag="/*! "
 let g:DoxygenToolkit_startCommentBlock="/* "
 
 " Notes directory
-:let g:notes_directories = ['~/Documents/vaults/vim-notes']
+:let g:notes_directories = ['~/.vim-notes']
 
 if has('nvim')
   call neomake#configure#automake('rw', 500)
