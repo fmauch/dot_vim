@@ -27,9 +27,9 @@ set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hE
 syntax enable
 
 
-if $TERM == "xterm-256color"
-  set t_Co=256
-endif
+"if $TERM == "xterm-256color"
+  "set t_Co=256
+"endif
 
 
 
@@ -78,7 +78,6 @@ noremap <down> <C-w><down>
 noremap <left> <C-w><left>
 noremap <right> <C-w><right>
 
-
 " Add snippets
 set runtimepath+=~/dotfiles/vim_snippets
 set runtimepath+=~/dotfiles/vim_snippets_fzi
@@ -87,9 +86,9 @@ set runtimepath+=~/dotfiles/vim_snippets_ros
 " Source my plugins
 source ~/.vim/plugin/plugins.vim
 
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
 
 "  settings
 set guioptions-=m  "remove menu bar

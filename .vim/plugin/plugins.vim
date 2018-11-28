@@ -22,6 +22,7 @@ Plug 'SirVer/ultisnips'
 "Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
@@ -196,6 +197,7 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
 
 function! s:colorscheme_customize() abort
+  call Base16hi("MatchParen", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm03, "bold,italic", "")
   :hi SpellBad ctermfg=NONE ctermbg=NONE cterm=underline
 endfunction
 
@@ -203,3 +205,8 @@ augroup on_change_colorschema
   autocmd!
   autocmd ColorScheme * call s:colorscheme_customize()
 augroup END
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
