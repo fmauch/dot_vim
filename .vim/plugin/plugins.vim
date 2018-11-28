@@ -42,6 +42,7 @@ Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-surround'
 Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 if has('nvim') || (v:version > 800)
