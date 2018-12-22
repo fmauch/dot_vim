@@ -98,3 +98,5 @@ let g:load_doxygen_syntax=1
 set guicursor=
 
 :command RemoveTrailingWS %s/\s\+$//e
+
+noremap <leader>cr :pyf $HOME/bin/clang-rename.py<cr>
