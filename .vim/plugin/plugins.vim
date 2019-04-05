@@ -55,8 +55,6 @@ if has('nvim') || (v:version > 800)
 else
   Plug 'vim-syntastic/syntastic'
 endif
-Plug 'xolox/vim-misc' " needed for vim-notes
-Plug 'xolox/vim-notes'
 Plug 'KabbAmine/zeavim.vim', {'on': [
 			\	'Zeavim', 'Docset',
 			\	'<Plug>Zeavim',
