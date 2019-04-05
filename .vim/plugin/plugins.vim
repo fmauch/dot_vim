@@ -21,42 +21,42 @@ endif
 Plug 'SirVer/ultisnips'
 "Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'leafgarland/typescript-vim'
+Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
-Plug 'richq/vim-cmake-completion'
 Plug 'rhysd/vim-clang-format'
+Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
-Plug 'tpope/vim-surround'
 Plug 'tell-k/vim-autopep8'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vimwiki/vimwiki'
 if has('nvim') || (v:version > 800)
   Plug 'neomake/neomake'
 else
   Plug 'vim-syntastic/syntastic'
 endif
-Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc' " needed for vim-notes
 Plug 'xolox/vim-notes'
-Plug 'lervag/vimtex'
 Plug 'KabbAmine/zeavim.vim', {'on': [
 			\	'Zeavim', 'Docset',
 			\	'<Plug>Zeavim',
