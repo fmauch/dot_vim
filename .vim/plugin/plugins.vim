@@ -24,6 +24,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'fmauch/vim_snippets'
+Plug 'fmauch/vim_snippets_ros'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
@@ -63,6 +65,9 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
 			\	'<Plug>ZVMotion'
 			\ ]}
 
+if filereadable(glob('~/.vim_plugins_local'))
+  source ~/.vim_plugins_local
+endif
 call plug#end()
 
 " vimwiki

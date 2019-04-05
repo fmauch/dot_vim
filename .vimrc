@@ -78,11 +78,6 @@ noremap <down> <C-w><down>
 noremap <left> <C-w><left>
 noremap <right> <C-w><right>
 
-" Add snippets
-set runtimepath+=~/dotfiles/vim_snippets
-set runtimepath+=~/dotfiles/vim_snippets_fzi
-set runtimepath+=~/dotfiles/vim_snippets_ros
-
 " Source my plugins
 source ~/.vim/plugin/plugins.vim
 
