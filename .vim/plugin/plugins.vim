@@ -39,6 +39,8 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'pearofducks/ansible-vim'
+Plug 'phenomenes/ansible-snippets'
 Plug 'rhysd/vim-clang-format'
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
@@ -221,6 +223,11 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" Setup Zeal plugin
+let g:zv_file_types = {
+                \    'yaml.ansible'             : 'ansible',
+                \ }
 
 
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
