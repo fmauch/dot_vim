@@ -18,6 +18,7 @@ endif
 
 
 "Add your bundles here
+Plug 'Rykka/riv.vim'
 Plug 'SirVer/ultisnips'
 "Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
@@ -27,6 +28,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
+Plug 'gu-fan/InstantRst'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
