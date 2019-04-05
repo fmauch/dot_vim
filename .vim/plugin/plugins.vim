@@ -219,3 +219,8 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+
+noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
+
+let g:instant_markdown_autostart = 1
