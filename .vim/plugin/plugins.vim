@@ -124,7 +124,7 @@ let g:tagbar_autoclose = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-x>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 set runtimepath+=~/.vim/snippet_repos/vim_snippets
 set runtimepath+=~/.vim/snippet_repos/vim_snippets_ros
