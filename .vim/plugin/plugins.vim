@@ -24,6 +24,7 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Chiel92/vim-autoformat'
 Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
@@ -41,13 +42,11 @@ Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
-Plug 'rhysd/vim-clang-format'
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
-Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -104,10 +103,8 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_delay = 0
 
-" Clang-format
-let g:clang_format#detect_style_file = 1
-nmap <Leader>C :ClangFormat<CR>
-vmap <Leader>C :ClangFormat<CR>
+nmap <Leader>C :Autoformat<CR>
+vmap <Leader>C :Autoformat<CR>
 
 " CTRLP
 let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop']
