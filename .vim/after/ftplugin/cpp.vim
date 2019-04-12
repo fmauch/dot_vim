@@ -40,11 +40,19 @@ function! s:ImplementDefinition()
   " Remove keywords
   s/\<virtual\>\s*//e
   s/\<static\>\s*//e
-  if s:namespace == ''
-    let l:classString = s:class . "::"
+  s/\<override\>\s*//e
+  exe 'normal ma'
+  let l:ns = search('^\s*\<namespace\> ' . s:namespace, 'b')
+  if s:namespace != ''
+    if l:ns != 0
+      let l:classString = s:class . "::""
+    else
+      let l:classString = s:namespace . "::" . s:class . "::"
+    endif
   else
-    let l:classString = s:namespace . "::" . s:class . "::"
+    let l:classString = s:class . "::"
   endif
+  exe 'normal `a'
   " Remove default parameters
   s/\s\{-}=\s\{-}[^,)]\{1,}//e
   " Add class qualifier
@@ -52,6 +60,6 @@ function! s:ImplementDefinition()
   " Add brackets
   exe "normal o{\<CR>}\<ESC>kk"
   " Format it
-  call clang_format#replace(line('.') - 2,line('.'))
+  "call Autoformat#replace(line('.') - 2,line('.'))
   call search('{')
 endfunction
