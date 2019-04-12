@@ -29,6 +29,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
+Plug 'godlygeek/tabular'
 Plug 'gu-fan/InstantRst'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
@@ -231,3 +232,15 @@ let g:zv_file_types = {
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 
 let g:instant_markdown_autostart = 1
+
+" Tabular remaps
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a, :Tabularize /,\zs<CR>
+  vmap <Leader>a, :Tabularize /,\zs<CR>
+  nmap <Leader>a<< :Tabularize /<<<CR>
+  vmap <Leader>a<< :Tabularize /<<<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
