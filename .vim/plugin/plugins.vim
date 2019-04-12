@@ -94,6 +94,7 @@ let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
 map <Leader>gt :YcmCompleter GetType<CR>
+map <Leader>F :YcmCompleter FixIt<CR>
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
