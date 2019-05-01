@@ -83,6 +83,7 @@ let g:vimwiki_list = [work_wiki, private_wiki]
 
 
 " YouCompleteMe config
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
