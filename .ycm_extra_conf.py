@@ -97,17 +97,22 @@ def FindNearest(path, target):
     return FindNearest(parent, target)
 
 
-def FindCompilationDatabase(path, src_filename):
+def FindCompilationDatabase(path, src_filename, level=0):
+    filename = "compile_commands.json"
     for root, dirs, files in os.walk(path):
-        for folder in ["."] + dirs:
-            candidate = os.path.join(path, folder, "compile_commands.json")
-            if(os.path.isfile(candidate) or os.path.isdir(candidate)):
+        for f in files:
+            if f.endswith(filename):
+                candidate = os.path.join(root, filename)
+                logging.info("Searching for compilation db in " + candidate)
                 with open(candidate) as database:
                     for line in database:
                         if src_filename in line:
                             logging.info("Found nearest " + "compile_commands.json at " + candidate)
                             return candidate
-    raise RuntimeError("Could not find compilation database for file " + src_filename)
+    parent = os.path.dirname(os.path.abspath(path))
+    if level > 5:
+        raise RuntimeError("Could not find compilation database for file " + src_filename)
+    return FindCompilationDatabase(parent, src_filename, level+1)
 
 def FindSourceToHeader(path, header_filename, level=0):
     """
@@ -192,16 +197,10 @@ def FlagsForCompilationDatabase(root, filename):
         logging.info("source_file:" + source_file)
         if source_file:
             filename = source_file
-        logging.info("filename: " + filename)
+            logging.info("filename: " + filename)
 
     try:
-        # Last argument of next function is the name of the build folder for
-        # out of source projects
-        try:
-            compilation_db_path = FindNearest(root, 'compile_commands.json')
-        except RuntimeError as exc:
-            build_directory = FindNearest(root, BUILD_DIRECTORY)
-            compilation_db_path = FindCompilationDatabase(build_directory, filename)
+        compilation_db_path = FindCompilationDatabase(root, filename)
 
         compilation_db_dir = os.path.dirname(compilation_db_path)
         logging.info("Set compilation database directory to " + compilation_db_dir)
