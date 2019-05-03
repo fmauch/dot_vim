@@ -18,13 +18,12 @@ endif
 
 
 "Add your bundles here
+Plug 'Chiel92/vim-autoformat'
 Plug 'Rykka/riv.vim'
 Plug 'SirVer/ultisnips'
-"Plug 'Xuyuanp/nerdtree-git-plugin' " seems like this does not do much...
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Chiel92/vim-autoformat'
 Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
