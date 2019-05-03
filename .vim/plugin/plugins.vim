@@ -31,6 +31,7 @@ Plug 'fmauch/vim_snippets_ros'
 Plug 'godlygeek/tabular'
 Plug 'gu-fan/InstantRst'
 Plug 'honza/vim-snippets'
+Plug 'iberianpig/tig-explorer.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'leafgarland/typescript-vim'
@@ -42,6 +43,7 @@ Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
+Plug 'rbgrouleff/bclose.vim' " dependency for tig-explorer
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -53,6 +55,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vimwiki/vimwiki'
+" Testing area
+" End Testing area
 if has('nvim') || (v:version > 800)
   Plug 'neomake/neomake'
 else
@@ -244,3 +248,6 @@ if exists(":Tabularize")
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
+
+" open tig with Project root path
+nnoremap <Leader>T :TigOpenProjectRootDir<CR>
