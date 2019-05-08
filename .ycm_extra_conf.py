@@ -110,7 +110,7 @@ def FindCompilationDatabase(path, src_filename, level=0):
                             logging.info("Found nearest " + "compile_commands.json at " + candidate)
                             return candidate
     parent = os.path.dirname(os.path.abspath(path))
-    if level > 5:
+    if level > 8 or parent == path:
         raise RuntimeError("Could not find compilation database for file " + src_filename)
     return FindCompilationDatabase(parent, src_filename, level+1)
 
@@ -134,7 +134,7 @@ def FindSourceToHeader(path, header_filename, level=0):
                             return filepath
 
     parent = os.path.dirname(os.path.abspath(path))
-    if level > 3:
+    if level > 5:
         return None
     return FindSourceToHeader(parent, header_filename, level+1)
 
