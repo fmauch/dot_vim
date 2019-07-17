@@ -120,18 +120,23 @@ def FindSourceToHeader(path, header_filename, level=0):
     best to find a matching cpp file that includes this header file and get flags from that.
     """
     basename = os.path.basename(header_filename)
-    regex = r'#include\s*(<|").*'+re.escape(basename)+r'(>|")'
+    regex = r'#include\s*(<|")(?P<filename>.*'+re.escape(basename)+r')(>|")'
+    print(regex)
 
     for root, dirs, files in os.walk(path):
         for f in files:
             extension = os.path.splitext(f)[1]
             if extension in C_SOURCE_EXTENSIONS or extension in CPP_SOURCE_EXTENSIONS or extension in HEADER_EXTENSIONS:
                 filepath = os.path.abspath(os.path.join(root, f))
-                with open(filepath) as content:
-                    for line in content:
-                        if re.search(regex, line):
-                            logging.info("Found match: " + filepath)
-                            return filepath
+                if filepath != header_filename:
+                    with open(filepath) as content:
+                        for line in content:
+                            if re.search(regex, line):
+                                m = re.match(regex, line)
+                                if header_filename.endswith(m.group('filename')):
+                                    logging.info("Found match for header {}: {}"
+                                                 .format(header_filename, filepath))
+                                    return filepath
 
     parent = os.path.dirname(os.path.abspath(path))
     if level > 5:
