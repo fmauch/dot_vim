@@ -50,6 +50,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -251,3 +252,5 @@ endif
 
 " open tig with Project root path
 nnoremap <Leader>T :TigOpenProjectRootDir<CR>
+
+nmap <Leader>M :Make<CR>
