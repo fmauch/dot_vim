@@ -49,7 +49,7 @@ Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
-Plug 'taketwo/vim-ros'
+Plug 'fmauch/vim-ros'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -255,3 +255,5 @@ endif
 nnoremap <Leader>T :TigOpenProjectRootDir<CR>
 
 nmap <Leader>M :Make<CR>
+
+let g:ros_build_system = '~/bin/custom_make_cpp'
