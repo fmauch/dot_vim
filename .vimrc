@@ -26,12 +26,13 @@ set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hE
 
 syntax enable
 
-
-"if $TERM == "xterm-256color"
-  "set t_Co=256
-"endif
-
-
+" Enable true color
+if exists('+termguicolors')
+  " The following two kines are important for tmux
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 
 " access global clipboard through ctrl-shift-c/v
