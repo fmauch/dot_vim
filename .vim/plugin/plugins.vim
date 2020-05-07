@@ -49,7 +49,7 @@ Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
-Plug 'fmauch/vim-ros'
+Plug 'taketwo/vim-ros' {'branch': 'py3'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -94,9 +94,10 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_echo_current_diagnostic = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
+let g:ycm_semantic_triggers = {
+\   'roslaunch' : ['="', '$(', '/'],
+\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
+\ }
 let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
@@ -131,10 +132,6 @@ let g:tagbar_autoclose = 1
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-x>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-set runtimepath+=~/.vim/snippet_repos/vim_snippets
-set runtimepath+=~/.vim/snippet_repos/vim_snippets_ros
-"let g:UltiSnipsSnippetsDir="~/.vim/snippet_repos/vim_snippets"
-"let g:UltiSnipsSnippetDirectories="[~/.vim/snippet_repos/vim_snippets_ros]"
 
 " NERDTree
 function! ToggleNERDTreeFind()
@@ -256,4 +253,4 @@ nnoremap <Leader>T :TigOpenProjectRootDir<CR>
 
 nmap <Leader>M :Make<CR>
 
-let g:ros_build_system = '~/bin/custom_make_cpp'
+let g:ros_build_system = 'catkin-tools'
