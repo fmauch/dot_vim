@@ -40,7 +40,7 @@ Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'oblitum/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
