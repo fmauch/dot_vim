@@ -95,4 +95,4 @@ set guicursor=
 
 :command RemoveTrailingWS %s/\s\+$//e
 
-noremap <leader>cr :pyf $HOME/bin/clang-rename.py<cr>
+noremap <leader>cr :py3f $HOME/bin/clang-rename.py<cr>
