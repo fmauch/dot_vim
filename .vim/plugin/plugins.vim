@@ -36,6 +36,8 @@ Plug 'iberianpig/tig-explorer.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
@@ -122,7 +124,17 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$|.pyc$',
   \ }
 let g:ctrlp_show_hidden = 1
-map <C-n> :CtrlPBufTag<CR>
+"map <C-n> :CtrlPBufTag<CR>
+
+" fzf.vim
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+let g:fzf_layout = { 'down': '50%' }
+
+map <C-n> :BTags<CR>
+map <C-s> :Rg<CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>bc :BCommits<CR>
+"map <C-p> :Files<CR>
 
 " Tagbar
 nmap <C-t> :TagbarToggle<CR>
