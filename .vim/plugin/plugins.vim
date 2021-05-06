@@ -215,6 +215,7 @@ nmap <C-w>7 <Plug>AirlineSelectTab7
 nmap <C-w>8 <Plug>AirlineSelectTab8
 nmap <C-w>9 <Plug>AirlineSelectTab9
 
+let g:tex_flavor = 'latex'
 
 " Setup okular to work with vimtex correctly
 if has('nvim')
