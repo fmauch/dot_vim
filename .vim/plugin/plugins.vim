@@ -116,11 +116,12 @@ let g:jedi#show_call_signatures_delay = 0
 
 nmap <Leader>C :Autoformat<CR>
 vmap <Leader>C :Autoformat<CR>
+let g:formatters_java = ['clangformat']
 
 " CTRLP
-let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop']
+let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop', 'pom.xml']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|.git)',
+  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|log|.git|target)$',
   \ 'file': '\v\.(exe|so|dll)$|.pyc$',
   \ }
 let g:ctrlp_show_hidden = 1
