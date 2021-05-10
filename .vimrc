@@ -74,10 +74,10 @@ set wildmenu
 
 
 " Disable arrow keys
-noremap <up> <C-w><up>
-noremap <down> <C-w><down>
-noremap <left> <C-w><left>
-noremap <right> <C-w><right>
+"noremap <up> <C-w><up>
+"noremap <down> <C-w><down>
+"noremap <left> <C-w><left>
+"noremap <right> <C-w><right>
 
 " Source my plugins
 source ~/.vim/plugin/plugins.vim
