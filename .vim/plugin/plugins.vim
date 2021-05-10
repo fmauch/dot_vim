@@ -15,6 +15,15 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
 
 
 "Add your bundles here
@@ -25,6 +34,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'de-vri-es/vim-urscript'
+Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release'}
 Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
@@ -247,7 +257,6 @@ let g:zv_file_types = {
 
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 
-let g:instant_markdown_autostart = 1
 
 " Tabular remaps
 if exists(":Tabularize")
