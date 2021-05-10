@@ -35,14 +35,13 @@ Plug 'honza/vim-snippets'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'phenomenes/ansible-snippets'
@@ -50,7 +49,6 @@ Plug 'rbgrouleff/bclose.vim' " dependency for tig-explorer
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'suan/vim-instant-markdown'
 Plug 'taketwo/vim-ros', {'branch': 'py3'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
@@ -59,6 +57,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 " Testing area
 " End Testing area
 if has('nvim') || (v:version > 800)
