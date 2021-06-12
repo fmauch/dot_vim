@@ -36,7 +36,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'de-vri-es/vim-urscript'
 Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release'}
 Plug 'flazz/vim-colorschemes'
-Plug 'fmauch/YCM-Generator', {'branch': 'develop'}
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
 Plug 'godlygeek/tabular'
