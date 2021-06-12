@@ -58,7 +58,7 @@ Plug 'rbgrouleff/bclose.vim' " dependency for tig-explorer
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'taketwo/vim-ros', {'branch': 'py3'}
+Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -274,4 +274,4 @@ nnoremap <Leader>T :TigOpenProjectRootDir<CR>
 
 nmap <Leader>M :Make<CR>
 
-let g:ros_build_system = 'catkin-tools'
+"let g:ros_build_system = 'catkin-tools'
