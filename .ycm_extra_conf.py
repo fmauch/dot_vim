@@ -225,7 +225,9 @@ def FlagsForCompilationDatabase(root, filename):
         return None
 
 
-def FlagsForFile(filename):
+def Settings(**kwargs):
+    filename = kwargs[ 'filename' ]
+    logging.info("Addinf glags for file %s", filename)
     final_flags = []
     root = os.path.realpath(filename)
     compilation_db_flags = FlagsForCompilationDatabase(root, filename)
