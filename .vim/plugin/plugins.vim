@@ -32,7 +32,6 @@ Plug 'Rykka/riv.vim'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'de-vri-es/vim-urscript'
 Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release'}
 Plug 'flazz/vim-colorschemes'
@@ -126,14 +125,6 @@ nmap <Leader>C :Autoformat<CR>
 vmap <Leader>C :Autoformat<CR>
 let g:formatters_java = ['clangformat']
 
-" CTRLP
-let g:ctrlp_root_markers = ['source_local.sh', 'setup_local.sh', '.ctrlp.stop', 'pom.xml']
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](doc|tmp|node_modules|devel|build|log|.git|target)$',
-  \ 'file': '\v\.(exe|so|dll)$|.pyc$',
-  \ }
-let g:ctrlp_show_hidden = 1
-"map <C-n> :CtrlPBufTag<CR>
 
 " fzf.vim
 "let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
