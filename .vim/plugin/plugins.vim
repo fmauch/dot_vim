@@ -33,7 +33,6 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'de-vri-es/vim-urscript'
-Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release'}
 Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
@@ -46,7 +45,6 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'ntpeters/vim-better-whitespace'
@@ -65,7 +63,15 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
+
+if executable('latex')
+  Plug 'lervag/vimtex'
+endif
+
+if executable('cargo')
+  Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release', 'for': 'markdown'}
+endif
 " Testing area
 " End Testing area
 if has('nvim') || (v:version > 800)
