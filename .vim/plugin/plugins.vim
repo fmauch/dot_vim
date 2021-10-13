@@ -67,7 +67,6 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
 if executable('latex')
   Plug 'lervag/vimtex'
-  let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
   " Setup okular to work with vimtex correctly
   if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
@@ -121,6 +120,10 @@ let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
 \   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
 \ }
+
+if executable('latex')
+  let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+endif
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
 map <Leader>gt :YcmCompleter GetType<CR>
