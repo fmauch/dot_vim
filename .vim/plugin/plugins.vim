@@ -147,7 +147,7 @@ map <C-n> :BTags<CR>
 map <C-s> :Rg<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>bc :BCommits<CR>
-"map <C-p> :Files<CR>
+map <C-p> :Files<CR>
 
 " Tagbar
 nmap <C-t> :TagbarToggle<CR>
