@@ -67,6 +67,14 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
 if executable('latex')
   Plug 'lervag/vimtex'
+  let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+  " Setup okular to work with vimtex correctly
+  if has('nvim')
+    let g:vimtex_compiler_progname = 'nvr'
+  endif
+  let g:vimtex_view_general_viewer = 'okular'
+  let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+  let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
 if executable('cargo')
@@ -113,7 +121,6 @@ let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
 \   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
 \ }
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
 map <Leader>gt :YcmCompleter GetType<CR>
@@ -222,13 +229,6 @@ nmap <C-w>9 <Plug>AirlineSelectTab9
 
 let g:tex_flavor = 'latex'
 
-" Setup okular to work with vimtex correctly
-if has('nvim')
-  let g:vimtex_compiler_progname = 'nvr'
-endif
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
 
 function! s:colorscheme_customize() abort
   call Base16hi("MatchParen", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm03, "bold,italic", "")
