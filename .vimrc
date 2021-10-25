@@ -20,6 +20,8 @@ set incsearch " search on each character
 set ignorecase    " with combination of smartcase!
 set smartcase     " /hello will match HeLlO and hello, /hEllo will only match hEllo
 
+set encoding=utf-8
+
 " Set leader key to space
 :let mapleader = " "
 
