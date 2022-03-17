@@ -47,6 +47,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
@@ -63,7 +64,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
+
+source ~/.vim/plugin/coc.vim
 
 if executable('latex')
   Plug 'lervag/vimtex'
@@ -109,25 +111,6 @@ let work_wiki.path_html = '~/.vimwiki_work/export/html/'
 let g:vimwiki_list = [work_wiki, private_wiki]
 
 
-" YouCompleteMe config
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_echo_current_diagnostic = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_semantic_triggers = {
-\   'roslaunch' : ['="', '$(', '/'],
-\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
-\ }
-
-if executable('latex')
-  let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
-endif
-" Goto definition with F3
-map <F3> :YcmCompleter GoTo<CR>
-map <Leader>gt :YcmCompleter GetType<CR>
-map <Leader>F :YcmCompleter FixIt<CR>
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
