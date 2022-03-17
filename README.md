@@ -21,6 +21,17 @@ on first run. Note: There might be packages needed to be installed for all plugi
 and there might be fields specifically setup for my machine so it's definitely worth it looking at
 the configuration files.
 
+### Install plugins and setup vim.coc
+The config is structured as such that it will install all vim plugins when vim is opened for the first
+time. However, to configure coc.vim, one has to install the necessary extensions by calling
+
+```
+:CocInstall coc-clangd coc-jedi
+```
+
+For a list of available extensions, please see
+[here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
+
 ### Automatic installation
 I personally use a shell script to install all my dotfiles at once that clones multiple repositories
 and calls stow on them. You find it in my [dotfiles repository](https://github.com/fmauch/dotfiles).
