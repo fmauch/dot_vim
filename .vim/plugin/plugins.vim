@@ -83,6 +83,11 @@ if executable('cargo')
   Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release', 'for': 'markdown'}
 endif
 " Testing area
+
+if has('nvim')
+  Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+endif
+
 " End Testing area
 
 Plug 'KabbAmine/zeavim.vim', {'on': [
