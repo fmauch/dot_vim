@@ -33,6 +33,7 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'de-vri-es/vim-urscript'
+Plug 'dense-analysis/ale'
 Plug 'flazz/vim-colorschemes'
 Plug 'fmauch/vim_snippets'
 Plug 'fmauch/vim_snippets_ros'
@@ -83,11 +84,7 @@ if executable('cargo')
 endif
 " Testing area
 " End Testing area
-if has('nvim') || (v:version > 800)
-  Plug 'neomake/neomake'
-else
-  Plug 'vim-syntastic/syntastic'
-endif
+
 Plug 'KabbAmine/zeavim.vim', {'on': [
 			\	'Zeavim', 'Docset',
 			\	'<Plug>Zeavim',
@@ -100,6 +97,10 @@ if filereadable(glob('~/.vim_plugins_local'))
   source ~/.vim_plugins_local
 endif
 call plug#end()
+
+let g:ale_echo_msg_format = '%linter% says %s'
+let b:ale_linters = {'cpp': ['clangtidy', 'cppcheck']}
+let b:ale_fixers = {'cpp': ['clangtidy']}
 
 " vimwiki
 let private_wiki = {}
@@ -163,8 +164,6 @@ call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
-" Syntastic
-map <F7> :SyntasticCheck<CR>
 
 " Autopep8
 let g:autopep8_max_line_length=99
@@ -189,16 +188,6 @@ let g:DoxygenToolkit_startCommentBlock="/* "
 " Notes directory
 :let g:notes_directories = ['~/.vim-notes']
 
-if has('nvim')
-  call neomake#configure#automake('rw', 500)
-  let g:neomake_python_enabled_makers = ['pylint']
-  augroup my_neomake_signs
-      au!
-      autocmd ColorScheme *
-          \ hi NeomakeErrorSign ctermfg = red |
-          \ hi NeomakeWarningSign ctermfg = yellow
-  augroup END
-endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
