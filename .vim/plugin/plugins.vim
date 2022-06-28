@@ -27,7 +27,7 @@ endfunction
 
 
 "Add your bundles here
-Plug 'Chiel92/vim-autoformat'
+Plug 'vim-autoformat/vim-autoformat'
 Plug 'Rykka/riv.vim'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
