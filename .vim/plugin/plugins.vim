@@ -124,6 +124,7 @@ let g:jedi#show_call_signatures_delay = 0
 nmap <Leader>C :Autoformat<CR>
 vmap <Leader>C :Autoformat<CR>
 let g:formatters_java = ['clangformat']
+let g:formatters_python = ['black']
 
 
 " fzf.vim
