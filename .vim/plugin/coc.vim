@@ -170,3 +170,5 @@ nmap <leader>A :CocCommand clangd.switchSourceHeader<CR>
 let g:coc_filetype_map = {
   \ 'yaml.ansible': 'ansible',
   \ }
+
+let g:coc_global_extensions = ['coc-jedi', 'coc-clangd', 'coc-cmake', 'coc-snippets']
