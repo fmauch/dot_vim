@@ -57,7 +57,6 @@ Plug 'rbgrouleff/bclose.vim' " dependency for tig-explorer
 Plug 'richq/vim-cmake-completion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'taketwo/vim-ros'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -82,6 +81,11 @@ endif
 if executable('cargo')
   Plug 'euclio/vim-markdown-composer', {'do': 'cargo build --release', 'for': 'markdown'}
 endif
+
+if isdirectory('/opt/ros')
+  Plug 'taketwo/vim-ros'
+endif
+
 " Testing area
 
 if has('nvim')
