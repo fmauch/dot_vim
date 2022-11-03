@@ -258,3 +258,5 @@ nmap <Leader>M :Make<CR>
 
 set foldlevel=99
 "let g:ros_build_system = 'catkin-tools'
+
+nmap glg :Tig --all<CR>
