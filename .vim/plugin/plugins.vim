@@ -115,10 +115,15 @@ let b:ale_fixers = {'cpp': ['clangtidy']}
 let private_wiki = {}
 let private_wiki.path = '~/.vimwiki_private/'
 let private_wiki.path_html = '~/.vimwiki_private/export/html/'
+let private_wiki.syntax = 'markdown'
+let private_wiki.ext = '.md'
 let work_wiki = {}
 let work_wiki.path = '~/.vimwiki_work/'
 let work_wiki.path_html = '~/.vimwiki_work/export/html/'
+let work_wiki.syntax = 'markdown'
+let work_wiki.ext = '.md'
 let g:vimwiki_list = [work_wiki, private_wiki]
+let g:vimwiki_global_ext = 0
 
 
 let g:jedi#auto_initialization = 1
