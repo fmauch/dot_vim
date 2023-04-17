@@ -67,6 +67,12 @@ Plug 'vimwiki/vimwiki'
 
 source ~/.vim/plugin/coc.vim
 
+if has('nvim')
+  Plug 'kdheepak/lazygit.nvim'
+  Plug 'nvim-lua/plenary.nvim' " Needed for CurrentFile feature to work correctly
+  nnoremap <silent> <leader>lg :LazyGitCurrentFile<CR>
+endif
+
 if executable('latex')
   Plug 'lervag/vimtex'
   " Setup okular to work with vimtex correctly
@@ -169,6 +175,8 @@ function! ToggleNERDTreeFind()
     endif
 endfunction
 nmap <Leader>t :call ToggleNERDTreeFind()<CR>
+
+let g:bufExplorerShowRelativePath=1
 
 "vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
