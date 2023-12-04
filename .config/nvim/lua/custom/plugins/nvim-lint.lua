@@ -8,6 +8,7 @@ return {
   config = function()
     local mason_registry = require "custom.lsp.mason-registry"
 
+    local lint = require("lint")
     -- Markdown linters
     local markdown_linters = {}
     local markdownlint_pkg_name = "markdownlint"
@@ -31,12 +32,11 @@ return {
 
     -- Python linters
     local python_linters = {}
-    local flake8_pkg_name = "flake8"
-    if (mason_registry.ensure_installed(flake8_pkg_name)) then
-      table.insert(python_linters, flake8_pkg_name)
+    local python_linter_pkg_name = "pylint"
+    if (mason_registry.ensure_installed(python_linter_pkg_name)) then
+      table.insert(python_linters, python_linter_pkg_name)
     end
 
-    local lint = require("lint")
     lint.linters_by_ft = {
       markdown = markdown_linters,
       python = python_linters,
