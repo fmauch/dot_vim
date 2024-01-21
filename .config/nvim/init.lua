@@ -53,6 +53,10 @@ vim.opt.softtabstop = 2
 vim.opt.foldenable = false
 vim.opt.textwidth = 99
 
+-- setup spelling
+vim.opt.spelllang = 'en_us,de_20'
+vim.opt.spell = true
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
