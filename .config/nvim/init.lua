@@ -190,7 +190,7 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     main = "ibl",
     opts = {
-      indent = { char = '┊' },
+      indent = { char = '┊', repeat_linebreak = false },
     },
   },
 
