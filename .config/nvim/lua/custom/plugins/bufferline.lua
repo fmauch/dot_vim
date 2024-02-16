@@ -5,10 +5,12 @@ return {
   config = function()
     require("bufferline").setup {
       options = {
-        numbers = "ordinal",
+        numbers = 'ordinal',
         indicator = {
           style = 'underline',
         },
+        show_close_icon = false,
+        truncate_names = false,
       },
     }
   end,
