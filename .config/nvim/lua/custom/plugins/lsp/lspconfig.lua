@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    {"ray-x/lsp_signature.nvim"},
   },
   config = function()
     -- import lspconfig plugin
@@ -15,6 +16,12 @@ return {
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+    local cfg = {
+      always_trigger = true,
+    }
+    local sig = require'lsp_signature'.setup(cfg)
+
 
     local keymap = vim.keymap -- for conciseness
 
