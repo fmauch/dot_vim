@@ -49,5 +49,9 @@ return {
         lint.try_lint()
       end,
     })
+
+    -- Set pylint to work in virtualenv
+    lint.linters.pylint.cmd = 'python'
+    lint.linters.pylint.args = {'-m', 'pylint', '-f', 'json'}
   end
 }
