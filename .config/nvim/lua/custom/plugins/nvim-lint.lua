@@ -9,6 +9,13 @@ return {
     local mason_registry = require "custom.lsp.mason-registry"
 
     local lint = require("lint")
+    -- CMake linters
+    local cmake_linters = {}
+    local cmakelint_pkg_name = "cmakelint"
+    if (mason_registry.ensure_installed(cmakelint_pkg_name)) then
+      table.insert(cmake_linters, cmakelint_pkg_name)
+    end
+
     -- Markdown linters
     local markdown_linters = {}
     local markdownlint_pkg_name = "markdownlint"
@@ -37,11 +44,20 @@ return {
       table.insert(python_linters, python_linter_pkg_name)
     end
 
+    -- Shell linters
+    local shell_linters = {}
+    local shell_linter_pkg_name = "shellcheck"
+    if (mason_registry.ensure_installed(shell_linter_pkg_name)) then
+      table.insert(shell_linters, python_linter_pkg_name)
+    end
+
     lint.linters_by_ft = {
+      cmake = cmake_linters,
       markdown = markdown_linters,
       python = python_linters,
       xml = xml_linters,
       yaml = yaml_linters,
+      sh = shell_linters,
     }
 
     vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufEnter", "BufWinEnter" }, {
