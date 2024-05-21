@@ -71,6 +71,9 @@ return {
 
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+        opts.desc = "Switch between header and source file"
+        keymap.set("n", "<leader>A", ":ClangdSwitchSourceHeader<CR>", opts)
       end,
     })
 
