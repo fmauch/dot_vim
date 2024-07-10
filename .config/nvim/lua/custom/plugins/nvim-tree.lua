@@ -9,9 +9,12 @@ return {
     require("nvim-tree").setup {
       update_focused_file = {
         enable      = true,
-        update_root  = true,
-        ignore_list = {}
+        update_root = {
+          enable = false,
+          ignore_list = {}
+        },
       },
+      sync_root_with_cwd = false,
     }
   end,
 
