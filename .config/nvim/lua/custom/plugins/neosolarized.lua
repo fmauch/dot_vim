@@ -8,5 +8,6 @@ return {
       comment_italics = true,
       background_set = true,
     }
+    vim.cmd("colorscheme neosolarized")
   end,
 }
