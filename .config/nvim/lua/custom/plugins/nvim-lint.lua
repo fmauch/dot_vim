@@ -18,7 +18,7 @@ return {
 
     -- Markdown linters
     local markdown_linters = {}
-    local markdownlint_pkg_name = "markdownlint"
+    local markdownlint_pkg_name = "markdownlint-cli2"
     if (mason_registry.ensure_installed(markdownlint_pkg_name)) then
       table.insert(markdown_linters, markdownlint_pkg_name)
     end
