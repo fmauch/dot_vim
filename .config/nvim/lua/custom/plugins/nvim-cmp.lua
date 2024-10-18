@@ -7,6 +7,8 @@ return {
 
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -55,6 +57,8 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'path' },
+        { name = 'buffer' }
       },
     }
     vim.keymap.set({"i"}, "<C-K>", function() luasnip.expand() end, {silent = true})
