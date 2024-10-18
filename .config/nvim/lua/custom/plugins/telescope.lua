@@ -27,6 +27,17 @@ return {
           },
         },
       },
+      pickers = {
+        treesitter = {
+           symbol_width = 100,
+         },
+        lsp_document_symbols = {
+           symbol_width = 100,
+         },
+        lsp_workspace_symbols = {
+           symbol_width = 100,
+         },
+      },
     }
 
     -- Enable telescope fzf native, if installed
