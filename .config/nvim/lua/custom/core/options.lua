@@ -14,7 +14,7 @@ vim.opt.foldenable = false
 vim.opt.textwidth = 99
 
 -- setup spelling
-vim.opt.spelllang = 'en_us,de_20'
+vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
 -- Set highlight on search
