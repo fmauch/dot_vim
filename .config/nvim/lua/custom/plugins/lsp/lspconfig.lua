@@ -73,7 +73,7 @@ return {
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
         opts.desc = "Switch between header and source file"
-        keymap.set("n", "<leader>A", ":ClangdSwitchSourceHeader<CR>", opts)
+        keymap.set("n", "<leader>A", ":LspClangdSwitchSourceHeader<CR>", opts)
       end,
     })
 
@@ -88,7 +88,7 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup({
       -- default handler for installed servers
       function(server_name)
         lspconfig[server_name].setup({
