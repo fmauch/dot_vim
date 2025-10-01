@@ -69,5 +69,12 @@ return {
     -- Set pylint to work in virtualenv
     lint.linters.pylint.cmd = 'python'
     lint.linters.pylint.args = {'-m', 'pylint', '-f', 'json'}
+
+    lint.linters["markdownlint-cli2"].args = {
+      '--config',
+      vim.fn.stdpath('config') .. '/lua/custom/plugins/cfg_linters/global.markdownlint-cli2.yml',
+      '--'
+    }
+
   end
 }
