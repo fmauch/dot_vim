@@ -36,6 +36,9 @@ return {
     if (mason_registry.ensure_installed(yamllint_pkg_name)) then
       table.insert(yaml_linters, yamllint_pkg_name)
     end
+    --if (mason_registry.ensure_installed("actionlint")) then
+      --table.insert(yaml_linters, "actionlint")
+    --end
 
     -- Python linters
     local python_linters = {}
