@@ -69,5 +69,6 @@ return {
     vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>ss', require('telescope.builtin').lsp_document_symbols, {desc = '[S]earch document [S]ymbols'})
     vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, {desc = '[W]orkspace [S]ymbols'})
+    vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, {desc = '[F]ind [R]eferences'})
   end
 }
