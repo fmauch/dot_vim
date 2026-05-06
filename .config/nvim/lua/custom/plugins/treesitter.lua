@@ -1,76 +1,64 @@
 return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  version = "main",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
+    {'nvim-treesitter/nvim-treesitter-textobjects', branch = "main"},
+    { "mason-org/mason.nvim" },
   },
-  build = ':TSUpdate',
   config = function()
-    require('nvim-treesitter.configs').setup {
-      -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'c', 'cpp', 'lua', 'python', 'typescript', 'vimdoc', 'vim', 'xml', 'yaml', 'cmake', 'dockerfile', 'markdown', 'diff' },
-      ignore_install = {},
-      modules = {},
+    local ts = require "nvim-treesitter"
+    if not vim.fn.executable("tree-sitter") then
+      vim.cmd [[MasonInstall tree-sitter-cli]]
+    end
+    ts.install{ 'c', 'cpp', 'lua', 'python', 'typescript', 'vimdoc', 'vim', 'xml', 'yaml', 'cmake', 'dockerfile', 'markdown', 'diff' }
 
-      -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-      auto_install = false,
-      sync_install = false,
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = ts.get_installed(),
+      callback = function()
+        vim.treesitter.start()
+        local tso = require "nvim-treesitter-textobjects"
+        local select = require "nvim-treesitter-textobjects.select"
+        local swap = require "nvim-treesitter-textobjects.swap"
+        tso.setup {
+          select = {
+            lookahead = true,
+            selection_modes = {
+              ["@parameter.outer"] = "v",
+              ["@function.outer"] = "v",
+              ["@class.outer"] = "V",
+            },
+            include_surrounding_whitespace = false,
+          },
+        }
 
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<c-space>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
-        },
-      },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-          },
-        },
-        move = {
-          enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-            [']m'] = '@function.outer',
-            [']]'] = '@class.outer',
-          },
-          goto_next_end = {
-            [']M'] = '@function.outer',
-            [']['] = '@class.outer',
-          },
-          goto_previous_start = {
-            ['[m'] = '@function.outer',
-            ['[['] = '@class.outer',
-          },
-          goto_previous_end = {
-            ['[M'] = '@function.outer',
-            ['[]'] = '@class.outer',
-          },
-        },
-        --swap = {
-          --enable = true,
-          --swap_next = {
-            --['<leader>a'] = '@parameter.inner',
-          --},
-          --swap_previous = {
-            --['<leader>A'] = '@parameter.inner',
-          --},
-        --},
-      },
-    }
+        -- keymaps
+        -- You can use the capture groups defined in `textobjects.scm`
+        vim.keymap.set({ "x", "o" }, "af", function()
+          select.select_textobject("@function.outer", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "if", function()
+          select.select_textobject("@function.inner", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "ac", function()
+          select.select_textobject("@class.outer", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "ic", function()
+          select.select_textobject("@class.inner", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "as", function()
+          select.select_textobject("@local.scope", "locals")
+        end)
+        vim.keymap.set("n", "<leader>.", function()
+          swap.swap_next "@parameter.inner"
+        end)
+        vim.keymap.set("n", "<leader>,", function()
+          swap.swap_previous "@parameter.inner"
+        end)
+
+        vim.wo.foldmethod = "expr"
+        vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      end,
+    })
   end
 }
